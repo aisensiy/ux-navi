@@ -1,32 +1,20 @@
 <div id="container">
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
+  <% 40.times do %>
+    <div class="item <%= rand_size %>" style="<%= rand_style %>">
+      <a href="#">
+       <p class="wrapper">
+        <span class="title">疯狂的设计</span>
+        <span class="desc">展示iPhone / iPad应用程序图标, 移动应用程序</span>
+       </p>
+      </a>
+      <ul class="tags">
+        <li>
+          <a href="#">科技</a>
+        </li>
+        <li>
+          <a href="#">UI</a>
+        </li>
+      </ul>
+    </div>
+  <% end %>
 </div>

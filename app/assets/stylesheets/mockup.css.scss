@@ -2,8 +2,77 @@
   background-color: silver;
   height: 200px;
   width: 200px;
-  margin: 5px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
+
+  &>a {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    &:hover {
+      text-decoration: none;
+    }
+    p {
+      padding: 1em 1em .2em 1em;
+      margin: 0;
+      .title {
+        color: white;
+      }
+      .desc {
+        margin-top: 5px;
+        display: block;
+        font-size: .7em;
+        color: #eee;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-text-overflow: ellipsis;
+        line-height: 1.5em;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.big-big {
+  width: 230px;
+  height: 230px;
+  .title {
+    font-size: 30px;
+  }
+}
+
+.big-small {
+  width: 230px;
+  height: 110px;
+  .title {
+    font-size: 20px;
+  }
+}
+
+.small-small {
+  width: 110px;
+  height: 110px;
+  .title {
+    font-size: 15px;
+  }
+}
+
+.tags {
+  padding: 0;
+  margin: 0 10px 0 10px;
+  li {
+    font-size: 12px;
+    float: left;
+    display: block;
+    margin: 3px;
+    a {
+      display: block;
+      padding: 1px 4px;
+      background-color: silver;
+      color: #eee;
+    }
+  }
 }

@@ -1,2 +1,4 @@
 $ ->
-  $('#container').isotope()
+  $('#container').isotope
+    masonryHorizontal:
+      columnWidth: 230
