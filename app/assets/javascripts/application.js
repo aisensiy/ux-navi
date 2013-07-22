@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery.isotope
+//= require jquery.isotope.centeredlayout
 //= require_tree .

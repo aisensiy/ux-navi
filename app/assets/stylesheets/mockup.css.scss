@@ -1,10 +1,13 @@
+#container {
+  margin: 0 auto;
+}
+
 .item {
   background-color: silver;
-  height: 200px;
-  width: 200px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
+  margin: 5px;
 
   &>a {
     display: block;
