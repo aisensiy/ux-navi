@@ -1,3 +1,5 @@
+@import "compass/css3/opacity";
+
 #container {
   margin: 0 auto;
 }
@@ -83,11 +85,13 @@
     a {
       display: block;
       padding: 1px 4px;
-      background-color: rgba(180, 180, 180, 0.4);
+      background-color: rgb(180, 180, 180);
+      @include opacity(0.8);
       color: white;
 
       &.disabled {
-        background-color: #aaa;
+        background-color: #a1a1a1;
+        @include opacity(1);
         text-decoration: none;
       }
     }
