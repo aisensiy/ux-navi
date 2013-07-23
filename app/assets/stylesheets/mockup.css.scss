@@ -2,6 +2,15 @@
   margin: 0 auto;
 }
 
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
 .item {
   background-color: silver;
   -webkit-transition: all 0.5s;
@@ -63,7 +72,7 @@
   }
 }
 
-.tags {
+@mixin tag {
   padding: 0;
   margin: 0 10px 0 10px;
   li {
@@ -74,8 +83,29 @@
     a {
       display: block;
       padding: 1px 4px;
-      background-color: silver;
-      color: #eee;
+      background-color: rgba(180, 180, 180, 0.4);
+      color: white;
+
+      &.disabled {
+        background-color: #aaa;
+        text-decoration: none;
+      }
     }
+  }
+}
+
+.tags {
+  @include tag;
+}
+
+.filter {
+  label {
+    margin: 5px;
+    float: left;
+    width: 2.5em;
+    line-height: 20px;
+  }
+  ul {
+    float: left;
   }
 }

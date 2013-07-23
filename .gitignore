@@ -16,3 +16,4 @@
 /vendor/cache
 /public/assets
 *.swp
+manifest.yml
