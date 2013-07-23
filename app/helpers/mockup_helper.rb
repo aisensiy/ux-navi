@@ -13,8 +13,9 @@ module MockupHelper
 
   def rand_tags
     tags = ['设计', '生活', 'Flat', '复古', '交互']
-    rand_range = [rand(0...tags.size), rand(0...tags.size)]
-    tags[rand_range.min..rand_range.max]
+    rand_min = rand(0...tags.size)
+    rand_max = [tags.size - 1, rand_min + rand(1..2)].min
+    tags[rand_min..rand_max]
   end
 
 end
