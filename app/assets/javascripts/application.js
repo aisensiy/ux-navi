@@ -16,3 +16,9 @@
 //= require jquery.isotope
 //= require jquery.isotope.centeredlayout
 //= require_tree .
+
+if (!window.console) {
+  window.console = {
+    log: function() {}
+  };
+}
