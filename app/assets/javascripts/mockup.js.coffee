@@ -26,8 +26,15 @@ class TagFilter
 
 
 $ ->
+  tag_filter = new TagFilter('#container', '.tags-container', 'disabled')
+
   $('#container').isotope
+    itemSelector : '.item'
     masonry:
       columnWidth: 120
 
-  tag_filter = new TagFilter('#container', '.tags-container', 'disabled')
+  setTimeout(
+    () -> $('#container').isotope('reLayout')
+    ,
+    100
+  )
