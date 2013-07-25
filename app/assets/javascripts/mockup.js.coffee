@@ -33,8 +33,8 @@ $ ->
     masonry:
       columnWidth: 120
 
-  setTimeout(
-    () -> $('#container').isotope('reLayout')
-    ,
-    100
-  )
+  # setTimeout(
+  #   () -> $('#container').isotope('reLayout')
+  #   ,
+  #   100
+  # )
