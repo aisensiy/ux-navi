@@ -7,8 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Link.delete_all
-
 links = JSON.parse File.read('db/seeds/links.json')
-links.each {|link| Link.create! link}
+links.each { |link| Link.create! link }
 
 Tag.delete_all
+tags = JSON.parse File.read('db/seeds/tags.json')
+tags.each { |tag| Tag.create! tag }
+
+Tagging.delete_all
+taggings = JSON.parse File.read('db/seeds/taggings.json')
+taggings.each { |tagging| Tagging.create! tagging }

@@ -3,6 +3,6 @@ class NaviController < ApplicationController
   layout 'application-fluid'
 
   def index
-    @links = Link.all
+    @links = Link.includes(:tags)
   end
 end

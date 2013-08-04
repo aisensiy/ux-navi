@@ -33,18 +33,20 @@
       padding: 1em 1em .2em 1em;
       margin: 0;
       .title {
+        line-height: 1.1em;
         color: white;
       }
       .desc {
         margin-top: 5px;
         display: block;
-        font-size: .7em;
+        font-size: .8em;
         color: #eee;
         overflow: hidden;
         text-overflow: ellipsis;
         -webkit-text-overflow: ellipsis;
         line-height: 1.5em;
-        white-space: nowrap;
+        max-height: 6em;
+        // white-space: nowrap;
       }
     }
   }
@@ -54,7 +56,7 @@
   width: 230px;
   height: 230px;
   .title {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 
@@ -62,7 +64,23 @@
   width: 230px;
   height: 110px;
   .title {
-    font-size: 20px;
+    font-size: 18px;
+  }
+}
+
+.super-big {
+  width: 350px;
+  height: 230px;
+  .title {
+    font-size: 18px;
+  }
+}
+
+.super-small {
+  width: 350px;
+  height: 110px;
+  .title {
+    font-size: 18px;
   }
 }
 

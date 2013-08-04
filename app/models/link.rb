@@ -2,10 +2,10 @@ class Link < ActiveRecord::Base
   attr_accessible :description, :title, :url, :tag_list
 
   has_many :taggings
-  has_many :links, through: :taggings
+  has_many :tags, through: :taggings
 
   def self.tagged_with(name)
-    Tag.find_by_name!(name).articles
+    Tag.find_by_name!(name).links
   end
 
   def self.tag_counts
