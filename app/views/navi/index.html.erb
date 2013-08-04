@@ -1,6 +1,15 @@
 <div class="tags-container filter clearfix">
-  <label>标签:</label>
   <ul class="tags">
+    <li>类型:</li>
+    <% @categories.each do |category| %>
+      <li><a href="#"><%= category %></a></li>
+    <% end %>
+  </ul>
+</div>
+<br />
+<div class="tags-container filter clearfix">
+  <ul class="tags">
+    <li>标签:</li>
     <% @tags.each do |tag| %>
       <li><a href="#"><%= tag %></a></li>
     <% end %>
@@ -9,7 +18,7 @@
 <div id="container">
   <% @links.each do |link| %>
     <% tags = rand_tags %>
-    <div class="item <%= navi_size(link) %> <%= link.tags.map(&:name).join(' ') %>" style="<%= rand_style %>">
+    <div class="item <%= navi_size(link) %> <%= link.tags.map(&:name).join(' ') %> <%= link.category.try(:name) %>" style="<%= rand_style %>">
       <a href="<%= link.url %>" target="_blank">
        <p class="wrapper">
         <span class="title"><%= link.title %></span>

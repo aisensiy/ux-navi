@@ -4,6 +4,9 @@ class Link < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
+  has_many :link_categories
+  has_many  :categories, through: :link_categories
+
   def self.tagged_with(name)
     Tag.find_by_name!(name).links
   end
@@ -21,5 +24,9 @@ class Link < ActiveRecord::Base
     self.tags = names.split(",").map do |n|
       Tag.where(name: n.strip).first_or_create!
     end
+  end
+
+  def category
+    self.categories.first
   end
 end

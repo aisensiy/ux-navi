@@ -17,3 +17,11 @@ tags.each { |tag| Tag.create! tag }
 Tagging.delete_all
 taggings = JSON.parse File.read('db/seeds/taggings.json')
 taggings.each { |tagging| Tagging.create! tagging }
+
+Category.delete_all
+categories = JSON.parse File.read('db/seeds/category.json')
+categories.each { |cate| Category.create! cate }
+
+LinkCategory.delete_all
+cate_links = JSON.parse File.read('db/seeds/link_category.json')
+cate_links.each { |cl| LinkCategory.create! cl }
