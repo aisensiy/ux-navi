@@ -4,5 +4,6 @@ class NaviController < ApplicationController
 
   def index
     @links = Link.includes(:tags)
+    @tags = Tag.pluck(:name).uniq
   end
 end
