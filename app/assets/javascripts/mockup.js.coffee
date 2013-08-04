@@ -9,7 +9,7 @@ class TagFilter
       selected_tags = $.map $selected_tags, (elem) -> $(elem).text()
 
       console.log selected_tags
-      selector = $.map(selected_tags, (elem) -> ".#{elem}").join(', ')
+      selector = $.map(selected_tags, (elem) -> ".#{elem}").join('')
 
       @$container.isotope
         masonry:

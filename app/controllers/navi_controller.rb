@@ -4,7 +4,7 @@ class NaviController < ApplicationController
 
   def index
     @links = Link.includes(:tags, :categories)
-    @tags = Tag.pluck(:name).uniq
+    @tags = Link.tag_counts.order('count desc').select { |elem| elem.count > 1 }
     @categories = Category.pluck(:name).uniq
   end
 end
