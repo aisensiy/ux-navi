@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Link.delete_all
+
+links = JSON.parse File.read('db/seeds/links.json')
+links.each {|link| Link.create! link}
