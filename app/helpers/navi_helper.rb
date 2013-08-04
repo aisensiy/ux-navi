@@ -3,7 +3,8 @@
 module NaviHelper
   def rand_style
     # colors = ["rgb(234, 87, 61)", "rgb(251, 192, 99)", "rgb(100, 176, 88)", "rgb(68, 102, 153)", "rgb(85, 85, 119)"]
-    colors = ["#96D3CE", "#F58E88", "#FEC8A9", "#29AEFD"]
+    # colors = ["#96D3CE", "#F58E88", "#FEC8A9", "#29AEFD"]
+    colors = ['#fee589', '#ea7267', '#eed0b3', '#4090b3', '#ebb770', '#a384a3', '#d2ce9e']
     "background-color: #{colors[rand(0...colors.size)]}"
   end
 
