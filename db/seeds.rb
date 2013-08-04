@@ -10,3 +10,5 @@ Link.delete_all
 
 links = JSON.parse File.read('db/seeds/links.json')
 links.each {|link| Link.create! link}
+
+Tag.delete_all
