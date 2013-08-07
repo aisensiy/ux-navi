@@ -28,11 +28,17 @@ class SearchFilter
     if @$input.val() then ":contains('#{@$input.val()}')" else ''
 
   bind_event: (event_callback) ->
-    @$input.keyup () ->
-      self = this
+    object = this
+    @$input.keyup (e) =>
+      self = e.currentTarget
       self.timeout = setTimeout () ->
         clearTimeout(self.timeout) if self.timeout
         event_callback()
+        console.log object.$input.val()
+        object.$container.find('.item').each () ->
+          $(this).removeHighlight()
+        object.$container.find('.item').each () ->
+          $(this).highlight(object.$input.val()) if object.$input.val().length
       ,
       500
 
