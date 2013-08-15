@@ -33,7 +33,7 @@ gem "twitter-bootstrap-rails"
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'thin'
 
 # Deploy with Capistrano
 # gem 'capistrano'
