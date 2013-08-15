@@ -23,7 +23,7 @@
   width: 250px;
   height: 110px;
   .title {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   a.type {
@@ -33,11 +33,13 @@
     color: #f1f1f1;
     background-color: #05B5FF;
     padding: 2px;
+    @include opacity(.7);
   }
 
   &>a {
     display: block;
     width: 100%;
+    height: 100%;
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -45,22 +47,27 @@
       text-decoration: none;
     }
     p {
-      padding: 1em 1em .2em 1em;
+      padding: 10px;
       margin: 0;
+      height: 80px;
+      overflow: hidden;
       .title {
+        display: block;
         line-height: 1.1em;
         color: white;
+        height: 2.2em;
+        overflow: hidden;
       }
       .desc {
         margin-top: 5px;
         display: block;
-        font-size: .9em;
+        font-size: 13px;
         color: white;
         overflow: hidden;
         text-overflow: ellipsis;
         -webkit-text-overflow: ellipsis;
-        line-height: 1.5em;
-        max-height: 4.4em;
+        line-height: 17px;
+        max-height: 34px;
         // white-space: nowrap;
       }
     }
