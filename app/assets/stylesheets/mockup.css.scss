@@ -20,6 +20,21 @@
   float: left;
   overflow: hidden;
 
+  width: 250px;
+  height: 110px;
+  .title {
+    font-size: 22px;
+  }
+
+  a.type {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    color: #f1f1f1;
+    background-color: #05B5FF;
+    padding: 2px;
+  }
+
   &>a {
     display: block;
     width: 100%;
@@ -45,7 +60,7 @@
         text-overflow: ellipsis;
         -webkit-text-overflow: ellipsis;
         line-height: 1.5em;
-        max-height: 5.5em;
+        max-height: 4.4em;
         // white-space: nowrap;
       }
     }

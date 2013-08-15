@@ -52,7 +52,7 @@ $ ->
     console.log selector
     $('#container').isotope
       masonry:
-        columnWidth: 120
+        columnWidth: 260
       filter: selector
 
   tag_filter.bind_event(item_filter)
@@ -61,7 +61,7 @@ $ ->
   $('#container').isotope
     itemSelector : '.item'
     masonry:
-      columnWidth: 120
+      columnWidth: 260
 
   # setTimeout(
   #   () -> $('#container').isotope('reLayout')

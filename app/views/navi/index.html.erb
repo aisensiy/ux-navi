@@ -18,20 +18,16 @@
 <div id="container">
   <% @links.each do |link| %>
     <% tags = rand_tags %>
-    <div class="item <%= navi_size(link) %> <%= link.tags.map(&:name).join(' ') %> <%= link.category.try(:name) %>" style="<%= rand_style %>">
+    <div class="item <%= link.tags.map(&:name).join(' ') %> <%= link.category.try(:name) %>" style="<%= rand_style %>">
       <a href="<%= link.url %>" target="_blank">
        <p class="wrapper">
         <span class="title"><%= link.title %></span>
         <span class="desc"><%= link.description %></span>
        </p>
       </a>
-      <ul class="tags">
-        <% link.tags.map(&:name).each do |tag| %>
-        <li>
-          <a href="#"><%= tag %></a>
-        </li>
-        <% end %>
-      </ul>
+      <div class="extra">
+        <a class="type">书籍</a>
+      </div>
     </div>
   <% end %>
 </div>
