@@ -25,3 +25,19 @@ categories.each { |cate| Category.create! cate }
 LinkCategory.delete_all
 cate_links = JSON.parse File.read('db/seeds/link_category.json')
 cate_links.each { |cl| LinkCategory.create! cl }
+
+Word.delete_all
+
+w1 = Word.create name: 'douban'
+w2 = Word.create name: 'website'
+w3 = Word.create name: 'food'
+w4 = Word.create name: 'meat'
+w5 = Word.create name: 'baidu'
+
+WordRelation.delete_all
+
+WordRelation.create parent_id: w2.id, child_id: w1.id
+WordRelation.create parent_id: w2.id, child_id: w5.id
+WordRelation.create parent_id: w3.id, child_id: w1.id
+WordRelation.create parent_id: w3.id, child_id: w4.id
+
