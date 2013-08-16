@@ -6,4 +6,16 @@ class Word < ActiveRecord::Base
 
   has_many :parents, through: :parent_relations
   has_many :children, through: :child_relations
+
+  def self.to_graph
+    graph = {}
+    words = Word.includes(:children)
+
+    words.each do |word|
+      graph[word.name] = [] if not graph.key?(word)
+      graph[word.name] = word.children.map {|child| child.name}
+    end
+
+    graph
+  end
 end
