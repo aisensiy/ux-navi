@@ -17,3 +17,4 @@
 /public/assets
 *.swp
 manifest.yml
+.DS_Store

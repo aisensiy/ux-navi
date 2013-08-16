@@ -11,12 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130816015049) do
+ActiveRecord::Schema.define(:version => 20130816081513) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "item_words", :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "word_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "items", :force => true do |t|
+    t.string   "name"
+    t.integer  "rank"
+    t.text     "url"
+    t.text     "description"
+    t.string   "author"
+    t.string   "item_type"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "link_categories", :force => true do |t|
@@ -60,8 +78,10 @@ ActiveRecord::Schema.define(:version => 20130816015049) do
   create_table "words", :force => true do |t|
     t.string   "name"
     t.boolean  "is_show"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.text     "description"
+    t.integer  "rank"
   end
 
 end

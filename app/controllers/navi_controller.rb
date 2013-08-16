@@ -4,7 +4,12 @@ class NaviController < ApplicationController
 
   def index
     @links = Link.includes(:tags, :categories)
-    @tags = Link.tag_counts.order('count desc').select { |elem| elem.count.to_i > 1 }
     @categories = Category.pluck(:name).uniq
+    @top_words = Word.where('rank != ?', 0).order('rank')
+  end
+
+  def graph
+    render json: Word.to_graph
   end
 end
+

@@ -1,11 +1,14 @@
 class Word < ActiveRecord::Base
-  attr_accessible :is_show, :name
+  attr_accessible :is_show, :name, :description, :rank
 
   has_many :parent_relations, class_name: :WordRelation, foreign_key: :child_id
   has_many :child_relations, class_name: :WordRelation, foreign_key: :parent_id
 
   has_many :parents, through: :parent_relations
   has_many :children, through: :child_relations
+
+  has_many :item_words
+  has_many :items, through: :item_words
 
   def self.to_graph
     graph = {}

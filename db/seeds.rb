@@ -1,10 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# encoding: utf-8
+require 'csv'
 
 Link.delete_all
 links = JSON.parse File.read('db/seeds/links.json')
@@ -26,18 +21,52 @@ LinkCategory.delete_all
 cate_links = JSON.parse File.read('db/seeds/link_category.json')
 cate_links.each { |cl| LinkCategory.create! cl }
 
+def import_words_from_csv(filename)
+  CSV.foreach(filename) do |row|
+    name = row[0]
+    parents = row[1]
+    description = row[2]
+    rank = row[3]
+
+    word = Word.find_or_initialize_by_name(name: name)
+    if description
+      word.description = description
+    end
+    word.rank = rank
+    word.save
+
+    if parents
+      parents.split('、').each do |parent|
+        parent_word = Word.find_or_create_by_name(name: parent)
+        WordRelation.create parent: parent_word, child: word
+      end
+    end
+  end
+end
+
 Word.delete_all
-
-w1 = Word.create name: 'douban'
-w2 = Word.create name: 'website'
-w3 = Word.create name: 'food'
-w4 = Word.create name: 'meat'
-w5 = Word.create name: 'baidu'
-
 WordRelation.delete_all
+import_words_from_csv('db/seeds/words.csv')
 
-WordRelation.create parent_id: w2.id, child_id: w1.id
-WordRelation.create parent_id: w2.id, child_id: w5.id
-WordRelation.create parent_id: w3.id, child_id: w1.id
-WordRelation.create parent_id: w3.id, child_id: w4.id
+def import_items_from_csv(filename)
+  CSV.foreach(filename) do |row|
+    item = Item.new
 
+    item.name = row[0]
+    item.rank = row[1]
+    item.url = row[2]
+    item.description = row[3]
+    item.item_type = row[5]
+
+    item.save
+
+    if row[6]
+      words = row[6].split('、')
+      item.save_words(words)
+    end
+  end
+end
+
+Item.delete_all
+ItemWord.delete_all
+import_items_from_csv('db/seeds/items.csv')

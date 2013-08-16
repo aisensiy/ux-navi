@@ -1,8 +1,8 @@
-<div class="tags-container filter clearfix">
+<div class="tags-container filter clearfix" style="margin: 0 auto">
   <ul class="tags">
-    <li>类型:</li>
-    <% @categories.each do |category| %>
-      <li><a href="#"><%= category %></a></li>
+    <!--<li>类型:</li>-->
+    <% @top_words.each do |category| %>
+      <li><a href="#"><%= category.name %></a></li>
     <% end %>
   </ul>
 </div>
