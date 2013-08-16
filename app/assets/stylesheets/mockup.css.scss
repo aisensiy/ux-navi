@@ -32,8 +32,9 @@
     right: 1px;
     color: #f1f1f1;
     background-color: #05B5FF;
-    padding: 2px;
+    padding: 1px 1px 0 1px;
     @include opacity(.7);
+    font-size: 12px;
   }
 
   &>a {
