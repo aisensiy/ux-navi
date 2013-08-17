@@ -29,4 +29,17 @@ module NaviHelper
       'big-big'
     end
   end
+
+  def class_sanitize(classname)
+    classname.gsub(/\ /, '-').downcase
+  end
+
+  def item_type_class(item_type)
+    mapping = {
+      '书籍' => 'book',
+      '网站' => 'website',
+      '工具' => 'tool'
+    }
+    mapping[item_type]
+  end
 end

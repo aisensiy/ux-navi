@@ -1,7 +1,12 @@
 @import "compass/css3/opacity";
+@import "compass/css3/inline-block";
 
 #container {
   margin: 1em auto 0;
+}
+
+.subwords {
+  height: 4em;
 }
 
 .isotope-item {
@@ -31,10 +36,21 @@
     top: 1px;
     right: 1px;
     color: #f1f1f1;
-    background-color: #05B5FF;
     padding: 1px 1px 0 1px;
     @include opacity(.7);
     font-size: 12px;
+
+    &.book {
+      background-color: #05B5FF;
+    }
+
+    &.website {
+      background: rgb(0, 180, 109);
+    }
+
+    &.tool {
+      background-color: silver;
+    }
   }
 
   &>a {
@@ -118,10 +134,10 @@
 @mixin tag {
   padding: 0;
   margin: 0 10px 0 10px;
+  text-align: center;
   li {
     font-size: 12px;
-    float: left;
-    display: block;
+    @include inline-block;
     margin: 3px;
     a {
       display: block;

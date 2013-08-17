@@ -3,7 +3,7 @@ class NaviController < ApplicationController
   layout 'application-fluid'
 
   def index
-    @links = Link.includes(:tags, :categories)
+    @links = Item.all
     @categories = Category.pluck(:name).uniq
     @top_words = Word.where('rank != ?', 0).order('rank')
   end

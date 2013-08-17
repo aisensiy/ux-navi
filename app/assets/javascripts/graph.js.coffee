@@ -13,7 +13,7 @@ class @Graph
     init_size = map_size(results)
 
     if map[name] && map[name].length
-      for index, node of map[name]
+      for node in map[name]
         continue if results[node] == true
         results[node] = true
         get_children(map, node, results)
@@ -21,5 +21,5 @@ class @Graph
     return results
 
   descendants: (ancestor, results) ->
-    return (x for x of get_children(@data, ancestor))
+    return (k for k, v of get_children(@data, ancestor))
 
