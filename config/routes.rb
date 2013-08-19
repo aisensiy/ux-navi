@@ -14,6 +14,7 @@ UxNavi::Application.routes.draw do
   root :to => 'navi#index'
 
   resources :items
+  resources :words
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
