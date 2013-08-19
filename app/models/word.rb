@@ -1,5 +1,5 @@
 class Word < ActiveRecord::Base
-  attr_accessible :is_show, :name, :description, :rank
+  attr_accessible :is_show, :name, :description, :rank, :child_ids, :parent_ids
 
   has_many :parent_relations, class_name: :WordRelation, foreign_key: :child_id
   has_many :child_relations, class_name: :WordRelation, foreign_key: :parent_id

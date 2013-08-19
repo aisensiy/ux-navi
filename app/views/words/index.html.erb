@@ -1,0 +1,5 @@
+<ul class="unstyled words-list clearfix">
+  <% @words.each do |word| %>
+    <li><%= link_to word.name, edit_word_path(word) %></li>
+  <% end %>
+</ul>
