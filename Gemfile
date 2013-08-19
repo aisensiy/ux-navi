@@ -19,12 +19,12 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'compass-rails'
 end
 
 gem 'jquery-rails'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem 'compass-rails'
 gem "twitter-bootstrap-rails"
 gem "simple_form"
 
