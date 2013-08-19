@@ -13,7 +13,7 @@
 <div id="container">
   <% @links.each do |link| %>
     <div class="item <%= link.words.map(&:name).map {|word| class_sanitize(word)}.join(' ') %>" style="<%= rand_style %>">
-      <a href="<%= link.url %>" target="_blank" data-id="<%= link.id %>">
+      <a class="link" href="<%= link.url %>" target="_blank" data-id="<%= link.id %>">
        <p class="wrapper">
         <span class="title"><%= link.name %></span>
         <span class="desc"><%= link.description %></span>
@@ -22,6 +22,9 @@
       <div class="extra">
         <a class="type <%= item_type_class link.item_type %>"><%= link.item_type %></a>
       </div>
+      <% if current_user %>
+        <%= link_to "edit", edit_item_path(link), class: 'btn btn-mini edit-btn' %>
+      <% end %>
     </div>
   <% end %>
 </div>
