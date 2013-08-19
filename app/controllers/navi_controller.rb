@@ -1,6 +1,5 @@
 class NaviController < ApplicationController
   include NaviHelper
-  layout 'application-fluid'
 
   def index
     @links = Item.all
