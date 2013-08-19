@@ -10,6 +10,8 @@ class Word < ActiveRecord::Base
   has_many :item_words
   has_many :items, through: :item_words
 
+  validates_presence_of :name
+
   def self.to_graph
     graph = {}
     words = Word.includes(:children)
