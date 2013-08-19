@@ -6,6 +6,16 @@ class WordsController < ApplicationController
     @words = Word.all
   end
 
+  def new
+    @word = Word.new
+  end
+
+  def create
+    @word = Word.new(params[:word])
+    @word.save!
+    redirect_to edit_word_path(@word)
+  end
+
   def edit
     @word = Word.find_by_id(params[:id])
   end
