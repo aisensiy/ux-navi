@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="span10 offset1">
+    <legend>Edit Item</legend>
+    <%= simple_form_for(@item, html: { class: 'form-horizontal' }, defaults: {input_html: {class: 'span5'}} ) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :url, as: :string %>
+      <%= f.input :description, input_html: { rows: 5 } %>
+      <%= f.association :words, as: :check_boxes, include_blank: false, input_html: { class: '' } %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>

@@ -4,6 +4,8 @@ UxNavi::Application.routes.draw do
   get "mockup/:action" => "mockup#:action"
   get "navi/graph"
   root :to => 'navi#index'
+
+  resources :items
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

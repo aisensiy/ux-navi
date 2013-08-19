@@ -13,7 +13,7 @@
 <div id="container">
   <% @links.each do |link| %>
     <div class="item <%= link.words.map(&:name).map {|word| class_sanitize(word)}.join(' ') %>" style="<%= rand_style %>">
-      <a href="<%= link.url %>" target="_blank">
+      <a href="<%= link.url %>" target="_blank" data-id="<%= link.id %>">
        <p class="wrapper">
         <span class="title"><%= link.name %></span>
         <span class="desc"><%= link.description %></span>

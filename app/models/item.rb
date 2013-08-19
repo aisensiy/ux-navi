@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  attr_accessible :author, :description, :name, :rank, :type, :url
+  attr_accessible :author, :description, :name, :rank, :type, :url, :word_ids
 
   has_many :item_words
   has_many :words, :through => :item_words
