@@ -12,6 +12,33 @@
   z-index: 2;
 }
 
+@mixin tag {
+  padding: 0;
+  margin: 0 10px 0 10px;
+  text-align: center;
+  li {
+    font-size: 12px;
+    @include inline-block;
+    margin: 3px;
+    a {
+      display: block;
+      padding: 1px 4px;
+      background-color: rgb(180, 180, 180);
+      text-shadow: none !important;
+      -webkit-text-shadow: none !important;
+      -moz-text-shadow: none !important;
+      @include opacity(0.8);
+      color: white;
+
+      &.disabled {
+        background-color: #a1a1a1;
+        @include opacity(1);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
 .isotope-hidden.isotope-item {
   pointer-events: none;
   z-index: 1;
@@ -96,6 +123,24 @@
   }
 }
 
+.topwords {
+  & > ul {
+    li {
+      line-height: 30px;
+    }
+    & > li > a {
+      padding: 3px 5px !important;
+      background-color: transparent;
+      &.disabled {
+        background-color: #eee;
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+  }
+}
+
 .big-big {
   width: 230px;
   height: 230px;
@@ -136,29 +181,6 @@
   }
 }
 
-@mixin tag {
-  padding: 0;
-  margin: 0 10px 0 10px;
-  text-align: center;
-  li {
-    font-size: 12px;
-    @include inline-block;
-    margin: 3px;
-    a {
-      display: block;
-      padding: 1px 4px;
-      background-color: rgb(180, 180, 180);
-      @include opacity(0.8);
-      color: white;
-
-      &.disabled {
-        background-color: #a1a1a1;
-        @include opacity(1);
-        text-decoration: none;
-      }
-    }
-  }
-}
 
 .tags {
   @include tag;

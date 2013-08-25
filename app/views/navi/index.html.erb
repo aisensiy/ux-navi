@@ -1,3 +1,9 @@
+<% content_for :navibar do %>
+  <% @top_words.each do |category| %>
+    <li><a href="#"><%= category.name %></a></li>
+  <% end %>
+<% end %>
+
 <div class="topwords clearfix tags-container">
   <ul class="tags">
     <% @top_words.each do |category| %>

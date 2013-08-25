@@ -55,7 +55,7 @@ class TagFilter
       $this = $(e.currentTarget)
       event_callback($this)
 
-    @$tag_container.on('click', 'ul.tags li a', _event)
+    @$tag_container.on('click', '.tags li a', _event)
 
 class SearchFilter
   constructor: (@container_selector, @input_field) ->
