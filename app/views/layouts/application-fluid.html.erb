@@ -37,17 +37,18 @@
           <div class="container-fluid nav-collapse pull-right">
             <ul class="nav">
               <% if user_signed_in? %>
+                <li> <%= link_to "NewItem", new_item_path, class: '' %> </li>
                 <li class="dropdown">
-                <a class="dropdown-toggle user-option" data-toggle="dropdown" href="#" title="个人主页">
-                  <span class="headerTinymanName"><%= current_user.email %> <b class="caret"></b></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <% if Rails.env != 'production' %>
-                    <li><%= link_to "修改密码", edit_user_registration_path %></li>
-                  <% end %>
-                  <li class="divider"></li>
-                  <li><%= link_to "退出", sign_out_path, method: :delete %></li>
-                </ul>
+                  <a class="dropdown-toggle user-option" data-toggle="dropdown" href="#" title="个人主页">
+                    <span class="headerTinymanName"><%= current_user.email %> <b class="caret"></b></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <% if Rails.env != 'production' %>
+                      <li><%= link_to "修改密码", edit_user_registration_path %></li>
+                    <% end %>
+                    <li class="divider"></li>
+                    <li><%= link_to "退出", sign_out_path, method: :delete %></li>
+                  </ul>
                 </li>
               <% else %>
                 <% if Rails.env == 'development' %>
