@@ -4,6 +4,8 @@ class Item < ActiveRecord::Base
   has_many :item_words
   has_many :words, :through => :item_words
 
+  validates_presence_of :name, :url
+
   def save_words(words)
     words.each do |word|
       w = Word.find_or_create_by_name(word)

@@ -1,19 +1,15 @@
 require 'test_helper'
 
 class ItemsControllerTest < ActionController::TestCase
-  test "should get edit" do
-    get :edit
-    assert_response :success
+  setup do
+    @user = create :user
+    sign_in @user
   end
 
-  test "should get udpate" do
-    get :udpate
-    assert_response :success
-  end
-
-  test "should get destroy" do
-    get :destroy
-    assert_response :success
+  test "should create new item" do
+    assert_difference "Item.count", 1 do
+      post :create, item: FactoryGirl.attributes_for(:item)
+    end
   end
 
 end

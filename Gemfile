@@ -37,6 +37,7 @@ gem "devise"
 
 # Use unicorn as the app server
 gem 'thin'
+gem 'factory_girl_rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'
