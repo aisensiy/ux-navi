@@ -1,3 +1,6 @@
+<%= link_to "new word", new_word_path, class: "btn btn-mini" %>
+<br />
+<br />
 <ul class="unstyled words-list clearfix">
   <% @words.each do |word| %>
     <li><%= link_to word.name, edit_word_path(word) %></li>

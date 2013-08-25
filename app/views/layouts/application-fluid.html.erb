@@ -25,7 +25,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="">UxNavi</a>
+          <a class="brand" href="/">UxNavi</a>
           <div class="topwords container-fluid nav-collapse pull-left">
             <ul class="nav tags">
               <%= yield :navibar %>
@@ -38,6 +38,7 @@
             <ul class="nav">
               <% if user_signed_in? %>
                 <li> <%= link_to "NewItem", new_item_path, class: '' %> </li>
+                <li> <%= link_to "WordList", words_path, class: '' %> </li>
                 <li class="dropdown">
                   <a class="dropdown-toggle user-option" data-toggle="dropdown" href="#" title="个人主页">
                     <span class="headerTinymanName"><%= current_user.email %> <b class="caret"></b></span>
