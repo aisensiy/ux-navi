@@ -4,6 +4,10 @@
   margin: 1em auto 0;
 }
 
+.search-query {
+  width: 12em;
+}
+
 .subwords {
   height: 4em;
 }
@@ -23,15 +27,15 @@
     a {
       display: block;
       padding: 1px 4px;
-      background-color: rgb(180, 180, 180);
+      background-color: #f3f3f3;
       text-shadow: none !important;
       -webkit-text-shadow: none !important;
       -moz-text-shadow: none !important;
       @include opacity(0.8);
-      color: white;
+      color: #777;
 
       &.disabled {
-        background-color: #a1a1a1;
+        background-color: #eee;
         @include opacity(1);
         text-decoration: none;
       }
@@ -124,6 +128,7 @@
 }
 
 .topwords {
+  padding-left: 10px !important;
   & > ul {
     li {
       line-height: 30px;
