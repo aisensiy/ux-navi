@@ -5,8 +5,7 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg', group: :production
-gem 'sqlite3', group: [:development, :test]
+gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -38,6 +37,13 @@ gem "devise"
 # Use unicorn as the app server
 gem 'thin'
 gem 'factory_girl_rails'
+
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
+end
 
 # Deploy with Capistrano
 # gem 'capistrano'
