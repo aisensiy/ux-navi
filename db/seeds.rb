@@ -8,6 +8,8 @@ File.readlines('db/seeds/category-tag.txt').each do |line|
   children.split(';').each do |word|
     new_word = Word.create(name: word, rank: 0)
     WordRelation.create(parent_id: tw.id, child_id: new_word.id)
+    item = Item.create(name: word, url: '#')
+    ItemWord.create(word_id: new_word.id, item_id: item.id)
   end
 end
 
